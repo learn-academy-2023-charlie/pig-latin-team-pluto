@@ -46,6 +46,14 @@ const App = () => {
          if (vowelsArray[0] === eachWord[0]){
         return eachWord + "way"
         } 
+
+        if (eachWord.includes('qu')) {
+          const quIndex = eachWord.indexOf('qu') + 2;
+          return eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay'; 
+          // move all consonants and "u" to the end, add "ay"
+        }
+        
+
     })
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
