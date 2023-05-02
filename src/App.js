@@ -13,6 +13,7 @@ const App = () => {
 
     // NO MODIFICATION NEEDED: the variable "arrayOfUserInput" will contain the text input from the user split into an array of words
     const arrayOfUserInput = userInput.split(" ")
+    // output [ 'apple', 'through', 'queen', 'squeal', 'fry', 'fluent' ]
     console.log("arrayOfUserInput:", arrayOfUserInput)
 
     // NO MODIFICATION NEEDED: now that we have an array of words, we can map over the array and look at each word
@@ -32,11 +33,32 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-
+      // Pseudocode
+      // Input: vowelsArray, eachWord
+      // output: 
+      // if the first letter of the word is a vowel, return the word + way at the end of the word.
+      // Methods: Find first letter with charAt()
+      // if eachWord charAt() is equal to vowelsArray
+      // return the concatenation of eachWord plus "way"
     
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
-      return eachWord
+         if (vowelsArray[0] === eachWord[0]){
+        return eachWord + "way"
+        } 
+
+        if (eachWord.includes('qu')) {
+          const quIndex = eachWord.indexOf('qu') + 2
+          return eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay' 
+          // move all consonants and "u" to the end, add "ay"
+        }
+        
+        if (eachWord.includes('y') && eachWord != eachWord.includes(vowelsArray)) {
+          const quIndex = eachWord.indexOf('y')
+          return  eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay' 
+          // move all consonants and "u" to the end, add "ay"
+        }
+
     })
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
