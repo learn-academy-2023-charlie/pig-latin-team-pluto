@@ -48,11 +48,16 @@ const App = () => {
         } 
 
         if (eachWord.includes('qu')) {
-          const quIndex = eachWord.indexOf('qu') + 2;
-          return eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay'; 
+          const quIndex = eachWord.indexOf('qu') + 2
+          return eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay' 
           // move all consonants and "u" to the end, add "ay"
         }
         
+        if (eachWord.includes('y') && eachWord != eachWord.includes(vowelsArray)) {
+          const quIndex = eachWord.indexOf('y')
+          return  eachWord.slice(quIndex) + eachWord.slice(0, quIndex) + 'ay' 
+          // move all consonants and "u" to the end, add "ay"
+        }
 
     })
 
